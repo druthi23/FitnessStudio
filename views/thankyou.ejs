@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Fitness Club</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="css/animate.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<style>
+		.wow:first-child {
+			visibility: hidden;
+		}
+	</style>
+
+
+	<script type="text/javascript">
+		window.onload = function () {
+			var today = new Date().toISOString().split('T')[0];
+			document.getElementsByName("setTodaysDate")[0].setAttribute('min', today);
+		}
+
+	</script>
+</head>
+
+<body>
+	
+	<!-- Start Header  -->
+	<header>
+		<div class="container">
+			<div class="logo">
+				<a href="">Fitness<span>Club</span></a>
+			</div>
+			<a href="javascript:void(0)" class="ham-burger">
+				<span></span>
+				<span></span>
+				<span></span>
+			</a>
+			<div class="nav">
+				<ul>
+					<li><a href="/home">Home</a></li>
+					<li><a href="/about">About</a></li>
+					<li><a href="/service">Services</a></li>
+					<li><a href="/trainers">Trainers</a></li>
+					<li><a href="/schedule">Schedule</a></li>
+					<li><a href="/price">Price</a></li>
+					<li><a href="/contact">Contact</a></li>
+				</ul>
+			</div>
+		</div>
+	</header>
+	
+	<section class="classes" id="trainers">
+		<div class="container">
+			<div class="box text wow slideInRight">
+				<br><h2 style="color: rgb(192, 20, 20);font-size: 80px;">Thank you!</h2>
+				<p class="title-p">Welcome to Fitness Club! We're thrilled that you've joined our fitness community, and we're ready to support you on your fitness journey.
+					To begin, visit us during operating hours, and our staff will assist you in setting up your workout routine and scheduling your fitness assessment.
+					Thank you for choosing Fitness Club. We're excited to embark on this fitness journey with you.
+					Let's achieve your fitness goals together!</p>
+			</div>
+			<div class="content">
+				<div class="box wow bounceInUp" data-wow-delay="0.2s">
+					<div class="inner">
+						
+						<div class="img">
+							<img src="images/thankyou1.jpeg" alt="price" />
+						</div>
+					</div>
+					<div class="wow slideInDown" >
+						<a href="home" class="btn"  >Go back</a>
+					</div>
+			</div>
+		</div>
+    </section>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script>
+		$(document).ready(function () {
+
+			$(".ham-burger, .nav ul li a").click(function () {
+
+				$(".nav").toggleClass("open")
+
+				$(".ham-burger").toggleClass("active");
+			})
+			$(".accordian-container").click(function () {
+				$(".accordian-container").children(".body").slideUp();
+				$(".accordian-container").removeClass("active")
+				$(".accordian-container").children(".head").children("span").removeClass("fa-angle-down").addClass("fa-angle-up")
+				$(this).children(".body").slideDown();
+				$(this).addClass("active")
+				$(this).children(".head").children("span").removeClass("fa-angle-up").addClass("fa-angle-down")
+			})
+
+			$(".nav ul li a, .go-down").click(function (event) {
+				if (this.hash !== "") {
+
+					event.preventDefault();
+
+					var hash = this.hash;
+
+					$('html,body').animate({
+						scrollTop: $(hash).offset().top
+					}, 800, function () {
+						window.location.hash = hash;
+					});
+
+					// add active class in navigation
+					$(".nav ul li a").removeClass("active")
+					$(this).addClass("active")
+				}
+			})
+		})
+
+	</script>
+	<script src="js/wow.min.js"></script>
+	<script>
+		wow = new WOW(
+			{
+				animateClass: 'animated',
+				offset: 0,
+			}
+		);
+		wow.init();
+	</script>
+</body>
+
+</html>

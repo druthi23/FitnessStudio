@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Fitness Club</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="css/animate.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<style>
+		.wow:first-child {
+			visibility: hidden;
+		}
+	</style>
+
+
+	<script type="text/javascript">
+		window.onload = function () {
+			var today = new Date().toISOString().split('T')[0];
+			document.getElementsByName("setTodaysDate")[0].setAttribute('min', today);
+		}
+
+	</script>
+</head>
+
+<body>
+
+	<!-- Start Header  -->
+	<header>
+		<div class="container">
+			<div class="logo">
+				<a href="">Fitness<span>Club</span></a>
+			</div>
+			<a href="javascript:void(0)" class="ham-burger">
+				<span></span>
+				<span></span>
+				<span></span>
+			</a>
+			<div class="nav">
+				<ul>
+					<li><a href="/">Home</a></li>
+					<li><a href="/about">About</a></li>
+					<li><a href="/service">Services</a></li>
+					<li><a href="/trainers">Trainers</a></li>
+					<li><a href="/schedule">Schedule</a></li>
+					<li><a href="/price">Price</a></li>
+					<li><a href="/contact">Contact</a></li>
+				</ul>
+			</div>
+		</div>
+	</header>
+
+
+	<!-- Start Service -->
+	<section class="service" id="service">
+		<div class="container">
+			<div class="content">
+				<div class="text box wow slideInLeft">
+					<h2>Services</h2>
+					<p>We offer a wide range of fitness services to cater to your unique needs and goals. Our dedicated
+						team of certified
+						trainers and wellness experts is committed to supporting you on your journey to better health
+						and fitness.<br><br>
+						No matter your age, fitness level, or goals, our comprehensive services are designed to help you
+						succeed. We're dedicated to assisting you in achieving a healthier, happier, and more vibrant
+						life.
+						Join us at Fitness Studio and let us be your partner in wellness.
+					</p>
+					<!-- <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
+						the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley
+						of type and scrambled it to make a type specimen book. It has survived not only five centuries
+					</p> -->
+					<a href="/signup" class="btn">Start Now</a>
+				</div>
+				<div class="accordian box wow slideInRight">
+					<div class="accordian-container">
+						<div class="head">
+							<h4>Cardiovascular Equipment</h4>
+							<span class="fa fa-angle-down"></span>
+						</div>
+						<div class="body">
+							<p>Our cardio equipment offers a range of options, including treadmills, stationary bikes,
+								elliptical trainers,
+								rowing machines, and stair climbers, to help you achieve your fitness goals. Stay
+								entertained with our
+								Cardio Theater while you work on your cardiovascular health. Join us today and elevate
+								your fitness journey!</p>
+						</div>
+					</div>
+					<div class="accordian-container">
+						<div class="head">
+							<h4>Strength Training Equipment</h4>
+							<span class="fa fa-angle-down"></span>
+						</div>
+						<div class="body">
+							<p>Our strength training equipment is designed to help you build muscle, increase strength,
+								and achieve your fitness goals.
+								From free weights and resistance machines to functional training tools,
+								we have everything you need to create a customized workout routine. Start your journey
+								to a stronger you today!</p>
+						</div>
+					</div>
+					<div class="accordian-container">
+						<div class="head">
+							<h4>Group Fitness Class</h4>
+							<span class="fa fa-angle-down"></span>
+						</div>
+						<div class="body">
+							<p>Experience the energy of our group fitness classes guided by expert instructors. With
+								diverse options, including high-intensity workouts and soothing yoga sessions,
+								you'll discover the ideal class to elevate your fitness and motivation.
+								Join us and unleash the potential of group fitness to reach your goals.</p>
+						</div>
+					</div>
+					<div class="accordian-container">
+						<div class="head">
+							<h4>Other Services</h4>
+							<span class="fa fa-angle-down"></span>
+						</div>
+						<div class="body">
+							<p>Other services include personalized training, nutrition counseling, wellness assessments,
+								rehabilitation programs, workshops, and a supportive community.
+								Join us and let us help you achieve your fitness and wellness goals.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<div class="social" style="position: absolute;top: 80%; left: 45%; ">
+
+		<a href=""><span class="fa fa-facebook"
+				style="height: 40px;width: 40px; color: rgb(195, 7, 7); font-size:23px "></span></a>
+		<a href=""><span class="fa fa-linkedin"
+				style="height: 40px;width: 40px; color: rgb(195, 7, 7);font-size:23px"></span></a>
+		<a href=""><span class="fa fa-skype"
+				style="height: 40px;width: 40px; color: rgb(195, 7, 7);font-size:23px"></span></a>
+		<a href=""><span class="fa fa-youtube-play"
+				style="height: 40px;width: 40px; color: rgb(195, 7, 7);font-size:23px"></span></a>
+	</div>
+	<!-- End Service -->
+
+
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script>
+		$(document).ready(function () {
+
+			$(".ham-burger, .nav ul li a").click(function () {
+
+				$(".nav").toggleClass("open")
+
+				$(".ham-burger").toggleClass("active");
+			})
+			// $(".accordian-container").click(function () {
+			// 	$(".accordian-container").children(".body").slideUp();
+			// 	$(".accordian-container").removeClass("active")
+			// 	$(".accordian-container").children(".head").children("span").removeClass("fa-angle-down").addClass("fa-angle-up")
+			// 	$(this).children(".body").slideDown();
+			// 	$(this).addClass("active")
+			// 	$(this).children(".head").children("span").removeClass("fa-angle-up").addClass("fa-angle-down")
+			// })   
+
+			$(".accordian-container").click(function () {
+				// Check if this section is already open
+				if ($(this).hasClass("active")) {
+					// Close the clicked section
+					$(this).children(".body").slideUp();
+					$(this).removeClass("active");
+					$(this).find(".head span").removeClass("fa-angle-up").addClass("fa-angle-down");
+				} else {
+					// Close all other sections
+					$(".accordian-container.active").children(".body").slideUp();
+					$(".accordian-container.active").removeClass("active");
+					$(".accordian-container.active").find(".head span").removeClass("fa-angle-up").addClass("fa-angle-down");
+
+					// Open the clicked section
+					$(this).children(".body").slideDown();
+					$(this).addClass("active");
+					$(this).find(".head span").removeClass("fa-angle-down").addClass("fa-angle-up");
+
+					$(".accordian-container:not(.active) .head span").removeClass("fa-angle-up").addClass("fa-angle-down");
+				}
+			});
+
+
+
+
+			$(".nav ul li a, .go-down").click(function (event) {
+				if (this.hash !== "") {
+
+					event.preventDefault();
+
+					var hash = this.hash;
+
+					$('html,body').animate({
+						scrollTop: $(hash).offset().top
+					}, 800, function () {
+						window.location.hash = hash;
+					});
+
+					// add active class in navigation
+					$(".nav ul li a").removeClass("active")
+					$(this).addClass("active")
+				}
+			})
+		})
+
+	</script>
+	<script src="js/wow.min.js"></script>
+	<script>
+		wow = new WOW(
+			{
+				animateClass: 'animated',
+				offset: 0,
+			}
+		);
+		wow.init();
+	</script>
+</body>
+
+</html>
